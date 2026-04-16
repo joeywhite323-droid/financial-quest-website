@@ -17,6 +17,7 @@ function injectSharedComponents() {
           <nav class="hidden md:block">
             <ul class="flex space-x-8">
               <li><a href="financial.html" class="text-charcoal hover:text-teal font-medium transition-colors">Financial Planning</a></li>
+              <li><a href="investments.html" class="text-charcoal hover:text-teal font-medium transition-colors">Investment Planning</a></li>
               <li><a href="retirement.html" class="text-charcoal hover:text-teal font-medium transition-colors">Retirement Planning</a></li>
               <li><a href="taxes.html" class="text-charcoal hover:text-teal font-medium transition-colors">Tax Planning</a></li>
               <li><a href="estate.html" class="text-charcoal hover:text-teal font-medium transition-colors">Estate Planning</a></li>
@@ -50,7 +51,8 @@ function injectSharedComponents() {
           <div>
             <h4 class="font-heading text-lg mb-4 text-teal">Services</h4>
             <ul class="space-y-2 text-sm text-gray-400">
-              <li><a href="index.html" class="hover:text-white transition-colors">Wealth Management</a></li>
+              <li><a href="financial.html" class="hover:text-white transition-colors">Wealth Management</a></li>
+              <li><a href="investments.html" class="hover:text-white transition-colors">Investment Trajectory</a></li>
               <li><a href="retirement.html" class="hover:text-white transition-colors">Retirement Bridges</a></li>
               <li><a href="taxes.html" class="hover:text-white transition-colors">Tax Efficiency</a></li>
               <li><a href="estate.html" class="hover:text-white transition-colors">Legacy Continuity</a></li>

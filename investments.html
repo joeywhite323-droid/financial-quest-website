@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Planning | Financial Quest</title>
+  <meta name="description" content="Calculate your compound yields and determine the best strategic asset allocation for your risk profile.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A192F',
+            charcoal: '#334155',
+            teal: '#14B8A6',
+            light: '#F8FAFC'
+          },
+          fontFamily: {
+            heading: ['Merriweather', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8FAFC;
+      color: #334155;
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Merriweather', serif;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('img/investments_img.png');
+      background-size: cover;
+      background-position: center 30%;
+    }
+  </style>
+  <script src="js/shared.js" defer></script>
+</head>
+<body class="pt-20">
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Strategic <span class="text-teal">Investment</span> Architecture.</h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+          Harness the mathematics of compounding interest and mitigate behavioral risk through optimized asset allocation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Article Column (Left) -->
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-heading text-navy font-bold mb-6">The Psychology of Market Cycles and Strategic Asset Allocation</h2>
+        <div class="prose max-w-none text-charcoal space-y-5 leading-relaxed text-lg">
+          <p>
+            The greatest threat to an investor's long-term compounding is not market volatility, but human behavior. Data consistently shows that average investors underperform the indices they invest in due to emotional mistiming—panic selling during contractions and over-allocating at market peaks.
+          </p>
+          <img src="img/investments_img.png" alt="Strategic Investment Growth" class="rounded-xl shadow-md w-full my-6 object-cover h-80 border border-slate-200">
+          <h3 class="text-2xl font-heading text-navy font-bold mt-8 mb-4">Risk Tolerance Translates to Return</h3>
+          <p>
+            Establishing an iron-clad investment policy statement based on your mathematically calculated risk tolerance guarantees you are adequately compensated for the volatility you endure. A conservative bond-heavy portfolio (targeting 4-5% yields) protects principle but invites inflation risk. An aggressive equity growth construct (targeting 9-11%) invites temporary 30% drawdowns but secures purchasing power over decades.
+          </p>
+          <p>
+            Use our Compound Yield Calculator to visualize exactly how your current velocity pairs with different volatility profiles over a 30-year horizon.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool Column (Right) -->
+      <div class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 md:p-8 relative sticky top-32">
+          <div class="absolute -top-4 -right-4 bg-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">Interactive Model</div>
+          
+          <h3 class="text-2xl font-heading text-navy font-bold mb-2">Compound Yield Calculator</h3>
+          <p class="text-sm text-gray-500 mb-6 border-b pb-4 border-gray-100">Project the future value of your capital deployment based on standardized risk models.</p>
+          
+          <form id="invForm" class="space-y-5">
+            <div>
+              <label class="block text-sm font-bold text-navy mb-1">Initial Capital Base</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input type="number" id="inv-initial" value="100000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-navy mb-1">Monthly Contribution Limit</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input type="number" id="inv-monthly" value="1500" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-navy mb-2">Target Risk & Volatility Profile</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors focus-within:ring-1 ring-teal">
+                  <input type="radio" name="inv-risk" value="0.045" class="text-teal focus:ring-teal">
+                  <div class="flex-1">
+                    <div class="text-sm font-bold text-navy">Conservative (4.5% Est.)</div>
+                    <div class="text-xs text-slate-500">Capital preservation focus (Bonds/T-Bills).</div>
+                  </div>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors focus-within:ring-1 ring-teal">
+                  <input type="radio" name="inv-risk" value="0.075" class="text-teal focus:ring-teal" checked>
+                  <div class="flex-1">
+                    <div class="text-sm font-bold text-navy">Balanced Growth (7.5% Est.)</div>
+                    <div class="text-xs text-slate-500">60/40 Equity to Fixed Income blend.</div>
+                  </div>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors focus-within:ring-1 ring-teal">
+                  <input type="radio" name="inv-risk" value="0.105" class="text-teal focus:ring-teal">
+                  <div class="flex-1">
+                    <div class="text-sm font-bold text-navy">Aggressive Growth (10.5% Est.)</div>
+                    <div class="text-xs text-slate-500">100% Equity / Thematic Allocation.</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <button type="button" onclick="calculateInvestments()" class="w-full mt-6 bg-navy hover:bg-navy/90 text-white font-medium py-3 px-4 rounded shadow transition-all duration-200">
+              Run Projection
+            </button>
+          </form>
+
+          <!-- Result Preview Area -->
+          <div id="invResultArea" class="hidden mt-8 p-6 bg-slate-50 border border-slate-200 rounded-xl relative">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-1">10-Year Trajectory Base</h4>
+            <div class="text-3xl font-heading font-black text-teal mb-4" id="invBaseDisplay">$0</div>
+            
+            <p class="text-sm text-charcoal mb-4">Capital growth trajectory charted based on selected volatility parameters.</p>
+
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center rounded-xl p-4 text-center">
+              <div class="mb-2 bg-navy text-white text-xs px-2 py-1 rounded shadow-sm">Projection Modeled</div>
+              <p class="text-sm text-navy font-bold mb-4">Unlock the compounded 20 and 30-year projections, plus our specific asset allocations.</p>
+              <button onclick="promptInvestmentGate()" class="bg-teal hover:bg-teal/90 text-white text-sm font-medium py-2 px-5 rounded shadow-lg transition-transform hover:scale-105">
+                Unlock Decadal Models
+              </button>
+            </div>
+            
+            <!-- Hidden Complete Report Data -->
+            <div id="invFullReport" class="hidden relative z-20 mt-4 border-t border-slate-200 pt-4">
+              <h4 class="font-bold text-navy mb-4">Compound Acceleration</h4>
+              
+              <div class="space-y-4">
+                <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                  <span class="text-sm font-bold text-charcoal">Year 10 Value</span>
+                  <span class="font-bold text-navy" id="inv10yr"></span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                  <span class="text-sm font-bold text-charcoal">Year 20 Value</span>
+                  <span class="font-bold text-navy" id="inv20yr"></span>
+                </div>
+                <div class="flex justify-between items-center pb-2">
+                  <span class="text-sm font-bold text-charcoal">Year 30 Value</span>
+                  <span class="text-2xl font-black text-teal" id="inv30yr"></span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-4 text-center italic" id="invAdvice"></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateCompound(initial, monthly, rateArg, years) {
+      const r = parseFloat(rateArg) / 12;
+      const n = years * 12;
+      let fv = initial * Math.pow(1 + r, n);
+      if(monthly > 0 && r > 0) {
+         fv += monthly * ((Math.pow(1 + r, n) - 1) / r);
+      }
+      return fv;
+    }
+
+    function calculateInvestments() {
+      const initial = parseFloat(document.getElementById('inv-initial').value) || 0;
+      const monthly = parseFloat(document.getElementById('inv-monthly').value) || 0;
+      const rate = document.querySelector('input[name="inv-risk"]:checked').value;
+      
+      const v10 = calculateCompound(initial, monthly, rate, 10);
+      const v20 = calculateCompound(initial, monthly, rate, 20);
+      const v30 = calculateCompound(initial, monthly, rate, 30);
+      
+      const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      
+      document.getElementById('invBaseDisplay').textContent = formatter.format(v10);
+      document.getElementById('inv10yr').textContent = formatter.format(v10);
+      document.getElementById('inv20yr').textContent = formatter.format(v20);
+      document.getElementById('inv30yr').textContent = formatter.format(v30);
+
+      const adviceElem = document.getElementById('invAdvice');
+      if(rate == "0.045") adviceElem.textContent = "Your conservative approach guards against drawdowns, but requires significantly higher principal contributions to outpace inflation long-term.";
+      if(rate == "0.075") adviceElem.textContent = "This balanced allocation offers moderate systemic protection while still harnessing the vast majority of historical equity premiums.";
+      if(rate == "0.105") adviceElem.textContent = "Your aggressive posture maximizes exponential compounding, provided you can behaviorally withstand 30-40% bear market contractions without liquidating.";
+
+      const resArea = document.getElementById('invResultArea');
+      resArea.classList.remove('hidden');
+      resArea.querySelector('.backdrop-blur-\\[2px\\]').classList.remove('hidden');
+      document.getElementById('invFullReport').classList.add('hidden');
+    }
+
+    function promptInvestmentGate() {
+      openLeadModal("Investment Trajectory", function showUnlockedReport() {
+         const resArea = document.getElementById('invResultArea');
+         resArea.querySelector('.backdrop-blur-\\[2px\\]').classList.add('hidden');
+         document.getElementById('invFullReport').classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
