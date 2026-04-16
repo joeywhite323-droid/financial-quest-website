@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Planning Strategy | Financial Quest</title>
+  <meta name="description" content="Optimize your tax allocations for the future with the Roth IRA and our tax-efficiency scorecard.">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #0A192F;
+      --color-charcoal: #334155;
+      --color-teal: #14B8A6;
+      --color-light: #F8FAFC;
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-light);
+      color: var(--color-charcoal);
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: var(--font-heading);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1605370216719-74f7d4c82b13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center 60%;
+    }
+  </style>
+  <script src="js/shared.js" defer></script>
+</head>
+<body class="pt-20">
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Strategic <span class="text-teal">Tax Efficiency</span>.</h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+          It's not about what you earn. It's about what you keep. Shield your wealth through intelligent asset location.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Article Column (Left) -->
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-heading text-navy font-bold mb-6">Optimizing the Roth IRA: Strategic Allocations for Tax-Free Growth</h2>
+        <div class="prose max-w-none text-charcoal space-y-5 leading-relaxed text-lg">
+          <p>
+            The hierarchy of investment accounts represents the most guaranteed return an investor can achieve. While market returns fluctuate, eliminating capital gains taxes and minimizing ordinary income tax is a mathematical certainty when executed correctly.
+          </p>
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Tax Documents and Planning" class="rounded-xl shadow-md w-full my-6 object-cover h-64 border border-gray-200">
+          <h3 class="text-2xl font-heading text-navy font-bold mt-8 mb-4">Asset Location vs. Asset Allocation</h3>
+          <p>
+            Where you hold an asset is just as important as what the asset is. Placing high-growth tech thematic ETFs inside a Roth IRA guarantees that decades of compounded exponential growth escape taxation completely. Contrastingly, placing tax-inefficient assets like high-yield dividend funds in a taxable brokerage creates an unnecessary annual tax drag.
+          </p>
+          <p>
+            Take our tax-efficiency scorecard to evaluate how well your current portfolio architecture defends against the IRS.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool Column (Right) -->
+      <div class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 md:p-8 relative sticky top-32">
+          <div class="absolute -top-4 -right-4 bg-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">Interactive Quiz</div>
+          
+          <h3 class="text-2xl font-heading text-navy font-bold mb-2">Tax-Efficiency Scorecard</h3>
+          <p class="text-sm text-gray-500 mb-6 border-b pb-4 border-gray-100">Answer 5 quick questions to grade your portfolio's tax intelligence.</p>
+          
+          <form id="taxForm" class="space-y-6">
+            
+            <div class="quiz-step" data-step="1">
+              <label class="block text-sm font-bold text-navy mb-2">1. Do you actively contribute to a Roth IRA or Roth 401(k)?</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q1" value="20" class="text-teal focus:ring-teal"> <span class="text-sm">Yes, maximizing it annually.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q1" value="10" class="text-teal focus:ring-teal"> <span class="text-sm">Yes, but not the maximum.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q1" value="0" class="text-teal focus:ring-teal" checked> <span class="text-sm">No / Using Traditional only.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="2">
+              <label class="block text-sm font-bold text-navy mb-2">2. How frequently do you use Tax-Loss Harvesting in taxable brokerages?</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q2" value="20" class="text-teal focus:ring-teal"> <span class="text-sm">Regularly, automated or manual.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q2" value="10" class="text-teal focus:ring-teal"> <span class="text-sm">Occasionally / End of year.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q2" value="0" class="text-teal focus:ring-teal" checked> <span class="text-sm">Never / I don't know what this is.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="3">
+              <label class="block text-sm font-bold text-navy mb-2">3. Are high-dividend yielding assets placed in tax-advantaged accounts?</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q3" value="20" class="text-teal focus:ring-teal"> <span class="text-sm">Yes, specifically placed there.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q3" value="0" class="text-teal focus:ring-teal" checked> <span class="text-sm">No / They are mixed everywhere.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="4">
+              <label class="block text-sm font-bold text-navy mb-2">4. Do you track and optimize capital gains brackets before selling?</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q4" value="20" class="text-teal focus:ring-teal"> <span class="text-sm">Yes.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q4" value="0" class="text-teal focus:ring-teal" checked> <span class="text-sm">No.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="5">
+              <label class="block text-sm font-bold text-navy mb-2">5. Do you utilize a Backdoor Roth Strategy?</label>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q5" value="20" class="text-teal focus:ring-teal"> <span class="text-sm">Yes.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q5" value="10" class="text-teal focus:ring-teal"> <span class="text-sm">Not applicable to my income.</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer p-3 border border-gray-200 rounded hover:border-teal transition-colors">
+                  <input type="radio" name="q5" value="0" class="text-teal focus:ring-teal" checked> <span class="text-sm">No / Don't know.</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="button" onclick="calculateTaxScore()" class="w-full mt-6 bg-navy hover:bg-navy/90 text-white font-medium py-3 px-4 rounded shadow transition-all duration-200">
+              Generate Score
+            </button>
+          </form>
+
+          <!-- Result Preview Area -->
+          <div id="taxResultArea" class="hidden mt-8 p-6 bg-slate-50 border border-slate-200 rounded-xl relative">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-1">Your Efficiency Grade</h4>
+            <div class="flex items-end gap-3 mb-4">
+              <div class="text-5xl font-heading font-black" id="taxGradeDisplay">F</div>
+              <div class="text-sm font-medium text-slate-500 mb-2">Score: <span id="taxNumDisplay"></span>/100</div>
+            </div>
+            
+            <p class="text-sm text-charcoal mb-4 italic" id="taxPreviewMsg">Your portfolio has significant tax leaks that are dragging down compound returns.</p>
+
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-[3px] z-10 flex flex-col items-center justify-center rounded-xl p-4 text-center">
+              <div class="mb-2 bg-navy text-white text-xs px-2 py-1 rounded shadow-sm">Preview Generated</div>
+              <p class="text-sm text-navy font-bold mb-4">Unlock our proprietary Tax Optimizer guide based on your exact grade.</p>
+              <button onclick="promptTaxGate()" class="bg-teal hover:bg-teal/90 text-white text-sm font-medium py-2 px-5 rounded shadow-lg transition-transform hover:scale-105">
+                Unlock PDF & Optimizations
+              </button>
+            </div>
+            
+            <!-- Hidden Complete Report Data -->
+            <div id="taxFullReport" class="hidden relative z-20 mt-4 border-t border-slate-200 pt-4">
+              <h4 class="font-bold text-navy mb-2">Key Optimizations Needed</h4>
+              <ul class="list-disc pl-5 text-sm space-y-2 text-charcoal" id="taxList">
+                <!-- Injected by JS -->
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateTaxScore() {
+      const q1 = parseInt(document.querySelector('input[name="q1"]:checked').value);
+      const q2 = parseInt(document.querySelector('input[name="q2"]:checked').value);
+      const q3 = parseInt(document.querySelector('input[name="q3"]:checked').value);
+      const q4 = parseInt(document.querySelector('input[name="q4"]:checked').value);
+      const q5 = parseInt(document.querySelector('input[name="q5"]:checked').value);
+      
+      const total = q1 + q2 + q3 + q4 + q5;
+      
+      let grade = "F";
+      let colorClass = "text-red-500";
+      let msg = "Your portfolio has significant tax leaks that are dragging down compound returns.";
+      
+      if(total >= 90) { grade = "A+"; colorClass = "text-teal"; msg = "Exceptional tax location! You are maximizing compound tax-free growth."; }
+      else if(total >= 80) { grade = "A"; colorClass = "text-teal"; msg = "Highly efficient. Just a few minor tweaks to reach perfection."; }
+      else if(total >= 60) { grade = "B"; colorClass = "text-blue-500"; msg = "Average efficiency. You have structural inefficiencies lowering your true return."; }
+      else if(total >= 40) { grade = "C"; colorClass = "text-yellow-600"; msg = "Below average. Immediate structural shifts are recommended."; }
+      
+      const gradeDiv = document.getElementById('taxGradeDisplay');
+      gradeDiv.textContent = grade;
+      gradeDiv.className = `text-5xl font-heading font-black ${colorClass}`;
+      
+      document.getElementById('taxNumDisplay').textContent = total;
+      document.getElementById('taxPreviewMsg').textContent = msg;
+      
+      // Inject list
+      const ul = document.getElementById('taxList');
+      ul.innerHTML = "";
+      if(q1 < 20) ul.innerHTML += "<li>Integrate aggressive Roth conversions and prioritize Roth structures.</li>";
+      if(q2 < 10) ul.innerHTML += "<li>Setup automated Tax-Loss Harvesting to offset capital gains annually.</li>";
+      if(q3 === 0) ul.innerHTML += "<li>Re-allocate high income producing assets (REITs, High Yield bonds) into Tax-Deferred accounts.</li>";
+      if(q4 === 0) ul.innerHTML += "<li>Strategize distributions to stay within the 0% long-term capital gains tax brackets.</li>";
+      if(ul.innerHTML === "") ul.innerHTML = "<li>Maintain current allocations and adjust only upon macro tax legislative changes.</li>";
+
+      const resArea = document.getElementById('taxResultArea');
+      resArea.classList.remove('hidden');
+      resArea.querySelector('.backdrop-blur-\\[3px\\]').classList.remove('hidden');
+      document.getElementById('taxFullReport').classList.add('hidden');
+    }
+
+    function promptTaxGate() {
+      openLeadModal("Tax Scorecard", function showUnlockedReport() {
+         const resArea = document.getElementById('taxResultArea');
+         resArea.querySelector('.backdrop-blur-\\[3px\\]').classList.add('hidden');
+         document.getElementById('taxFullReport').classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

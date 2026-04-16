@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estate & Legacy Planning | Financial Quest</title>
+  <meta name="description" content="Secure your multi-generational wealth with Living Trusts and modern estate planning strategies.">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #0A192F;
+      --color-charcoal: #334155;
+      --color-teal: #14B8A6;
+      --color-light: #F8FAFC;
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-light);
+      color: var(--color-charcoal);
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: var(--font-heading);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center 50%;
+    }
+  </style>
+  <script src="js/shared.js" defer></script>
+</head>
+<body class="pt-20">
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Multi-Generational <span class="text-teal">Legacy</span> Continuity.</h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+          Structure and preserve your kingdom. Protect your heirs from probate, estate taxes, and unnecessary delays.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Article Column (Left) -->
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-heading text-navy font-bold mb-6">Beyond the Will: Why Living Trusts are the Cornerstone of Modern Estate Planning</h2>
+        <div class="prose max-w-none text-charcoal space-y-5 leading-relaxed text-lg">
+          <p>
+            The greatest misconception in wealth accumulation is assuming that a simple Will provides adequate protection for an estate. A Will explicitly goes through probate—a public, timely, and computationally expensive legal process that exposes your assets to public scrutiny.
+          </p>
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Legal Planning Documents" class="rounded-xl shadow-md w-full my-6 object-cover h-64 border border-gray-200">
+          <h3 class="text-2xl font-heading text-navy font-bold mt-8 mb-4">The Revocable Living Trust</h3>
+          <p>
+            Establishing a Revocable Living Trust is the cornerstone of avoiding probate entirely. By transferring ownership of assets into the trust while you are alive, your designated successor trustees have immediate fluidity and legal standing to distribute and manage assets upon your passing or incapacitation. 
+          </p>
+          <p>
+            Coupled with Durable Powers of Attorney and Advance Healthcare Directives, a trust builds an impenetrable wall around your family's financial infrastructure. Run your documents through our Checklist below to find your missing links.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool Column (Right) -->
+      <div class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 md:p-8 relative sticky top-32">
+          <div class="absolute -top-4 -right-4 bg-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">Audit Checklist</div>
+          
+          <h3 class="text-2xl font-heading text-navy font-bold mb-2">Legacy Continuity Checklist</h3>
+          <p class="text-sm text-gray-500 mb-6 border-b pb-4 border-gray-100">Check off the documents you currently have legally instituted, updated within the last 5 years.</p>
+          
+          <form id="estateForm" class="space-y-4">
+            
+            <div class="space-y-3">
+              <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded cursor-pointer hover:border-teal transition-colors">
+                <input type="checkbox" id="doc-will" class="w-5 h-5 text-teal rounded focus:ring-teal">
+                <span class="font-medium text-navy text-sm">Last Will & Testament</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded cursor-pointer hover:border-teal transition-colors">
+                <input type="checkbox" id="doc-trust" class="w-5 h-5 text-teal rounded focus:ring-teal">
+                <span class="font-medium text-navy text-sm">Revocable Living Trust</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded cursor-pointer hover:border-teal transition-colors">
+                <input type="checkbox" id="doc-poa" class="w-5 h-5 text-teal rounded focus:ring-teal">
+                <span class="font-medium text-navy text-sm">Durable Power of Attorney (Financial)</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded cursor-pointer hover:border-teal transition-colors">
+                <input type="checkbox" id="doc-health" class="w-5 h-5 text-teal rounded focus:ring-teal">
+                <span class="font-medium text-navy text-sm">Advance Healthcare Directive</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded cursor-pointer hover:border-teal transition-colors">
+                <input type="checkbox" id="doc-bene" class="w-5 h-5 text-teal rounded focus:ring-teal">
+                <span class="font-medium text-navy text-sm">Updated Beneficiary Designations (IRAs/Life Ins.)</span>
+              </label>
+              
+              <label class="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded cursor-pointer hover:border-teal transition-colors">
+                <input type="checkbox" id="doc-biz" class="w-5 h-5 text-teal rounded focus:ring-teal">
+                <span class="font-medium text-navy text-sm">Business Succession Plan (If Business Owner)</span>
+              </label>
+            </div>
+
+            <button type="button" onclick="calculateEstate()" class="w-full mt-6 bg-navy hover:bg-navy/90 text-white font-medium py-3 px-4 rounded shadow transition-all duration-200">
+              Audit My Documents
+            </button>
+          </form>
+
+          <!-- Result Preview Area -->
+          <div id="estateResultArea" class="hidden mt-8 p-6 bg-slate-50 border border-slate-200 rounded-xl relative">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-1">Preparedness Status</h4>
+            <div class="text-3xl font-heading font-black text-navy mb-2" id="estateStatusDisplay">Deficient</div>
+            <p class="text-sm text-charcoal mb-4" id="estateQuickMsg"></p>
+
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-[3px] z-10 flex flex-col items-center justify-center rounded-xl p-4 text-center">
+              <div class="mb-2 bg-navy text-white text-xs px-2 py-1 rounded shadow-sm">Audit Complete</div>
+              <p class="text-sm text-navy font-bold mb-4">Discover the critical liabilities your missing documents expose your family to.</p>
+              <button onclick="promptEstateGate()" class="bg-teal hover:bg-teal/90 text-white text-sm font-medium py-2 px-5 rounded shadow-lg transition-transform hover:scale-105">
+                Download Missing Docs Report
+              </button>
+            </div>
+            
+            <!-- Hidden Complete Report Data -->
+            <div id="estateFullReport" class="hidden relative z-20 mt-4 border-t border-slate-200 pt-4">
+              <h4 class="font-bold text-red-600 mb-2 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                Critical Missing Capabilities
+              </h4>
+              <ul class="list-disc pl-5 text-sm space-y-3 text-charcoal" id="estateList">
+                <!-- Injected by JS -->
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateEstate() {
+      const will = document.getElementById('doc-will').checked;
+      const trust = document.getElementById('doc-trust').checked;
+      const poa = document.getElementById('doc-poa').checked;
+      const health = document.getElementById('doc-health').checked;
+      const bene = document.getElementById('doc-bene').checked;
+      const biz = document.getElementById('doc-biz').checked;
+      
+      let present = 0;
+      if(will) present++;
+      if(trust) present++;
+      if(poa) present++;
+      if(health) present++;
+      if(bene) present++;
+      
+      let status = "Highly Deficient";
+      if(present >= 5) status = "Fully Protected";
+      else if(present >= 3) status = "Partially Protected";
+      
+      document.getElementById('estateStatusDisplay').textContent = status;
+      
+      // Inject missing explanations
+      const ul = document.getElementById('estateList');
+      ul.innerHTML = "";
+      
+      if(!trust) ul.innerHTML += "<li><span class='font-bold'>No Living Trust:</span> Your estate will be subjected to public probate, causing massive delays and court fees for your heirs.</li>";
+      if(!poa) ul.innerHTML += "<li><span class='font-bold'>No Financial POA:</span> If you are incapacitated, no one has legal authority to access your bank accounts or pay mortgages.</li>";
+      if(!health) ul.innerHTML += "<li><span class='font-bold'>No Healthcare Directive:</span> Family members may be forced to litigate to make life-or-death medical decisions for you.</li>";
+      if(!bene) ul.innerHTML += "<li><span class='font-bold'>Outdated Beneficiaries:</span> Assets may bypass your will entirely and end up in the hands of ex-spouses or untended estates.</li>";
+      if(!will && trust) ul.innerHTML += "<li><span class='font-bold'>No Pour-Over Will:</span> Any assets accidentally left out of your trust won't automatically transfer without a will.</li>";
+      if(!biz) ul.innerHTML += "<li><span class='font-bold'>No Business Succession:</span> Your business operations may freeze immediately upon your death without dedicated transitional rights.</li>";
+
+      if(ul.innerHTML === "") {
+        ul.innerHTML = "<li class='text-teal font-bold'>Excellent work. You have established a robust legal framework for legacy protection. Regular 3-5 year reviews are recommended.</li>";
+        document.getElementById('estateStatusDisplay').className = "text-3xl font-heading font-black text-teal mb-2";
+      }
+
+      document.getElementById('estateQuickMsg').textContent = `Our audit detected critical missing infrastructure in your estate design.`;
+
+      const resArea = document.getElementById('estateResultArea');
+      resArea.classList.remove('hidden');
+      resArea.querySelector('.backdrop-blur-\\[3px\\]').classList.remove('hidden');
+      document.getElementById('estateFullReport').classList.add('hidden');
+    }
+
+    function promptEstateGate() {
+      openLeadModal("Legacy Audit", function showUnlockedReport() {
+         const resArea = document.getElementById('estateResultArea');
+         resArea.querySelector('.backdrop-blur-\\[3px\\]').classList.add('hidden');
+         document.getElementById('estateFullReport').classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

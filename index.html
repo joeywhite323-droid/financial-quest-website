@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holistic Wealth Management | Financial Quest</title>
+  <meta name="description" content="Discover modern holistic wealth management, thematic ETF portfolios, and strategic asset allocation tailored for the next 40 years.">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #0A192F;
+      --color-charcoal: #334155;
+      --color-teal: #14B8A6;
+      --color-light: #F8FAFC;
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-light);
+      color: var(--color-charcoal);
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: var(--font-heading);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1466099513337-33eb9cc0a8ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center 30%;
+    }
+  </style>
+  <script src="js/shared.js" defer></script>
+</head>
+<body class="pt-20">
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Mastering the Path to Your <span class="text-teal">First Million</span> & Beyond.</h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+          A strategic convergence of modern portfolio theory, tech-forward thematic investing, and comprehensive wealth planning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Article Column (Left) -->
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-heading text-navy font-bold mb-6">Modern Portfolio Theory & Thematic ETFs: Building for the Next 40 Years</h2>
+        <div class="prose max-w-none text-charcoal space-y-5 leading-relaxed text-lg">
+          <p>
+            In today's rapidly evolving economic landscape, a traditional 60/40 portfolio composition might not suffice for investors aiming looking at a decadal timeline. At Financial Quest, we combine established modern portfolio theory with forward-looking thematic asset allocations.
+          </p>
+          <img src="https://images.unsplash.com/photo-1590483861217-1f4a439223e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Modern Architecture" class="rounded-xl shadow-md w-full my-6 object-cover h-64 border border-gray-200">
+          <h3 class="text-2xl font-heading text-navy font-bold mt-8 mb-4">The Shift Towards High-Growth Sectors</h3>
+          <p>
+            The inclusion of Thematic ETFs focusing on Artificial Intelligence, Biotechnology, and Green Energy represents a strategic tilts, enhancing potential for outsized returns while managing systemic risk through broad-sector diversification. When integrated within a tax-advantaged framework, this approach compounds significantly over a 40-year investment horizon.
+          </p>
+          <p>
+            But theory must translate to actionable data. Understanding where you currently stand is the foundational step before engineering a portfolio optimization. 
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool Column (Right) -->
+      <div class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 md:p-8 relative sticky top-32">
+          <div class="absolute -top-4 -right-4 bg-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">Interactive Tool</div>
+          
+          <h3 class="text-2xl font-heading text-navy font-bold mb-2">The Net Worth & Goal Tracker</h3>
+          <p class="text-sm text-gray-500 mb-6 border-b pb-4 border-gray-100">Map your current position against a target objective. Input your current assets and liabilities below.</p>
+          
+          <form id="nwForm" class="space-y-4">
+            <div>
+              <h4 class="font-bold text-navy mb-3">Assets +</h4>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-sm text-charcoal">Cash / Liquid</label>
+                  <div class="relative w-1/2">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-cash" value="25000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <label class="text-sm text-charcoal">Investments (Brokerage/IRA)</label>
+                  <div class="relative w-1/2">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-invest" value="150000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <label class="text-sm text-charcoal">Real Estate / Home Equity</label>
+                  <div class="relative w-1/2">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-realestate" value="85000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-gray-100">
+              <h4 class="font-bold text-navy mb-3">Liabilities -</h4>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-sm text-charcoal">Credit / Consumer Debt</label>
+                  <div class="relative w-1/2">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-debt" value="12000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <label class="text-sm text-charcoal">Student Loans</label>
+                  <div class="relative w-1/2">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-student" value="0" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-6">
+              <label class="block text-sm font-bold text-navy mb-2">Target Milestone (Goal)</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input type="number" id="nw-goal" value="1000000" class="w-full pl-8 pr-4 py-2.5 border border-teal rounded bg-teal/5 focus:ring-2 focus:ring-teal focus:border-teal outline-none font-bold text-navy text-lg" min="10000">
+              </div>
+            </div>
+
+            <button type="button" onclick="calculateNetWorth()" class="w-full mt-6 bg-navy hover:bg-navy/90 text-white font-medium py-3 px-4 rounded shadow transition-all duration-200">
+              Analyze Trajectory
+            </button>
+          </form>
+
+          <!-- Result Preview Area -->
+          <div id="nwResultArea" class="hidden mt-8 p-6 bg-slate-50 border border-slate-200 rounded-xl relative">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-1">Current Net Worth</h4>
+            <div class="text-3xl font-heading font-black text-teal mb-4" id="nwTotalDisplay">$0</div>
+            
+            <div class="mb-2 flex justify-between text-xs text-slate-500 font-medium">
+              <span>Path to <span id="nwGoalStr">$1,000,000</span></span>
+              <span id="nwPercentStr">0%</span>
+            </div>
+            <div class="w-full bg-slate-200 rounded-full h-2.5 mb-6">
+              <div class="bg-teal h-2.5 rounded-full" id="nwProgressBar" style="width: 0%"></div>
+            </div>
+
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center rounded-xl p-4 text-center">
+              <div class="mb-2 bg-navy text-white text-xs px-2 py-1 rounded shadow-sm">Preview Generated</div>
+              <p class="text-sm text-navy font-bold mb-4">Discover the compound steps required to reach your target milestone.</p>
+              <button onclick="promptNetWorthGate()" class="bg-teal hover:bg-teal/90 text-white text-sm font-medium py-2 px-5 rounded shadow-lg transition-transform hover:scale-105">
+                Unlock Full Report
+              </button>
+            </div>
+            
+            <!-- Hidden Complete Report Data -->
+            <div id="nwFullReport" class="hidden relative z-20 mt-4 border-t border-slate-200 pt-4">
+              <h4 class="font-bold text-navy mb-2">Analysis Breakdown</h4>
+              <p class="text-sm text-charcoal mb-3" id="nwAdviceBody"></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateNetWorth() {
+      const getVal = (id) => parseFloat(document.getElementById(id).value) || 0;
+      
+      const assets = getVal('nw-cash') + getVal('nw-invest') + getVal('nw-realestate');
+      const liabilities = getVal('nw-debt') + getVal('nw-student');
+      const nw = assets - liabilities;
+      const goal = getVal('nw-goal') || 1000000;
+      
+      const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      
+      document.getElementById('nwTotalDisplay').textContent = formatter.format(nw);
+      document.getElementById('nwGoalStr').textContent = formatter.format(goal);
+      
+      let percentage = (nw / goal) * 100;
+      if (percentage < 0) percentage = 0;
+      if (percentage > 100) percentage = 100;
+      
+      document.getElementById('nwProgressBar').style.width = percentage.toFixed(1) + '%';
+      document.getElementById('nwPercentStr').textContent = percentage.toFixed(1) + '%';
+      
+      // Setup the hidden report
+      let advice = "";
+      if (nw < 0) advice = "Your primary focus should be liquidating high-interest consumer debt before prioritizing long-term thematic investments.";
+      else if (percentage < 25) advice = "You have established a baseline. Utilizing diversified ETFs and maximizing employer matches will accelerate your initial compounding phase.";
+      else if (percentage < 75) advice = "You are in the crucial acceleration phase. Strategic tax harvesting and portfolio rebalancing are essential here.";
+      else advice = "You are approaching your target. Capital preservation and transitioning to yield-focused assets will secure your milestone.";
+      
+      document.getElementById('nwAdviceBody').textContent = advice;
+      
+      const resArea = document.getElementById('nwResultArea');
+      resArea.classList.remove('hidden');
+      
+      // Ensure the "blur" is active on first calculation
+      resArea.querySelector('.backdrop-blur-\\[2px\\]').classList.remove('hidden');
+      document.getElementById('nwFullReport').classList.add('hidden');
+    }
+
+    function promptNetWorthGate() {
+      openLeadModal("Net Worth Strategy", function showUnlockedReport() {
+         const resArea = document.getElementById('nwResultArea');
+         resArea.querySelector('.backdrop-blur-\\[2px\\]').classList.add('hidden');
+         document.getElementById('nwFullReport').classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

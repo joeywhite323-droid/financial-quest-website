@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Planning | Financial Quest</title>
+  <meta name="description" content="Calculate your retirement income bridge and explore dynamic spending strategies vs the 4% rule.">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #0A192F;
+      --color-charcoal: #334155;
+      --color-teal: #14B8A6;
+      --color-light: #F8FAFC;
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-light);
+      color: var(--color-charcoal);
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: var(--font-heading);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center 40%;
+    }
+  </style>
+  <script src="js/shared.js" defer></script>
+</head>
+<body class="pt-20">
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Bridging Your <span class="text-teal">Retirement Gap</span>.</h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+          Transitioning from asset accumulation to dependable income distribution is the most critical pivot of your financial life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Article Column (Left) -->
+      <div class="lg:col-span-7">
+        <h2 class="text-3xl font-heading text-navy font-bold mb-6">The 4% Rule vs. Dynamic Spending: How to Ensure Your Portfolio Outlives You</h2>
+        <div class="prose max-w-none text-charcoal space-y-5 leading-relaxed text-lg">
+          <p>
+            For decades, the "4% Rule"—formulated by William Bengen in 1994—has stood as the gold standard for retirement withdrawals. It suggested that withdrawing 4% of your original portfolio (adjusted annually for inflation) would survive any 30-year span in modern history. 
+          </p>
+          <img src="https://images.unsplash.com/photo-1542204689-f55db1ec5a7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Retirement Planning" class="rounded-xl shadow-md w-full my-6 object-cover h-64 border border-gray-200">
+          <h3 class="text-2xl font-heading text-navy font-bold mt-8 mb-4">The Flaws of Rigidity</h3>
+          <p>
+            In a landscape characterized by low yields and sporadic volatility, rigid adherence to a static rule can be dangerous. A dynamic spending model, which dictates tightening the belt during bear markets and spending more flexibly during bull runs, often leads to higher lifetime withdrawal limits and lower sequence-of-returns risk.
+          </p>
+          <p>
+            Before deciding on a distribution strategy, you must define the "Income Bridge"—the gap between your desired lifestyle expenses and guaranteed income sources like Social Security or pensions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool Column (Right) -->
+      <div class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 md:p-8 relative sticky top-32">
+          <div class="absolute -top-4 -right-4 bg-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-sm">Interactive Tool</div>
+          
+          <h3 class="text-2xl font-heading text-navy font-bold mb-2">The Retirement Income Bridge</h3>
+          <p class="text-sm text-gray-500 mb-6 border-b pb-4 border-gray-100">Calculate the monthly savings required to bridge the gap between Social Security and your dream retirement income.</p>
+          
+          <form id="retForm" class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-bold text-navy mb-1">Current Age</label>
+                <input type="number" id="ret-age" value="45" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="18">
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-navy mb-1">Retirement Age</label>
+                <input type="number" id="ret-targetage" value="65" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="50">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-navy mb-1 mt-2">Desired Monthly Income (in Retirement)</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input type="number" id="ret-income" value="8000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="1000">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-navy mb-1">Current Saved for Retirement</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input type="number" id="ret-saved" value="150000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-bold text-navy mb-1">Expected Monthly Social Security</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input type="number" id="ret-ss" value="2500" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+              </div>
+            </div>
+
+            <button type="button" onclick="calculateRetirement()" class="w-full mt-6 bg-navy hover:bg-navy/90 text-white font-medium py-3 px-4 rounded shadow transition-all duration-200">
+              Calculate The Gap
+            </button>
+          </form>
+
+          <!-- Result Preview Area -->
+          <div id="retResultArea" class="hidden mt-8 p-6 bg-slate-50 border border-slate-200 rounded-xl relative">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-1">Your Monthly Income Gap</h4>
+            <div class="text-3xl font-heading font-black text-teal mb-4" id="retGapDisplay">$0</div>
+            
+            <p class="text-sm text-charcoal mb-4">To generate this missing income dynamically, your target portfolio size at retirement must be <span class="font-bold border-b border-teal" id="retTargetPortfolio">$0</span>.</p>
+
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center rounded-xl p-4 text-center">
+              <div class="mb-2 bg-navy text-white text-xs px-2 py-1 rounded shadow-sm">Preview Generated</div>
+              <p class="text-sm text-navy font-bold mb-4">See exactly how much you need to save per month starting today to bridge this gap.</p>
+              <button onclick="promptRetirementGate()" class="bg-teal hover:bg-teal/90 text-white text-sm font-medium py-2 px-5 rounded shadow-lg transition-transform hover:scale-105">
+                Unlock Full Strategy
+              </button>
+            </div>
+            
+            <!-- Hidden Complete Report Data -->
+            <div id="retFullReport" class="hidden relative z-20 mt-4 border-t border-slate-200 pt-4">
+              <h4 class="font-bold text-navy mb-2">The Action Plan</h4>
+              <p class="text-sm text-charcoal mb-4">To hit your target portfolio size of <span id="retTargetPortfolio2"></span> by age <span id="retAgeLabel"></span>, you must consistently save:</p>
+              <div class="text-center p-4 bg-teal/10 rounded border border-teal/20 text-navy font-bold text-2xl tracking-tight mb-4" id="retMonthlySaving">$0 <span class="text-sm text-gray-500 font-normal">/ mo</span></div>
+              <p class="text-xs text-gray-500">Assuming an aggressive 7% average annual return and a conservative 4% dynamic withdrawal rate at retirement.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function calculateRetirement() {
+      const currentAge = parseFloat(document.getElementById('ret-age').value) || 0;
+      const targetAge = parseFloat(document.getElementById('ret-targetage').value) || 0;
+      const desiredIncome = parseFloat(document.getElementById('ret-income').value) || 0;
+      const currentSaved = parseFloat(document.getElementById('ret-saved').value) || 0;
+      const ssIncome = parseFloat(document.getElementById('ret-ss').value) || 0;
+      
+      const yearsToTarget = targetAge - currentAge;
+      if(yearsToTarget <= 0) {
+        alert("Retirement age must be greater than current age.");
+        return;
+      }
+      
+      const gapMonthly = desiredIncome - ssIncome;
+      const gapAnnual = gapMonthly * 12;
+      
+      // Target Portfolio (using conservative 4% rule approximation for target amount required)
+      const targetPortfolio = gapAnnual > 0 ? (gapAnnual / 0.04) : 0;
+      
+      // Calculate monthly savings needed (simple PMT formula FV = PV*(1+r)^n + PMT*(((1+r)^n - 1)/r))
+      // Solving for PMT, assume r = 7% annual / 12 for monthly, n = yearsToTarget * 12
+      const annualRate = 0.07;
+      const monthlyRate = annualRate / 12;
+      const totalMonths = yearsToTarget * 12;
+      
+      const futureValueCurrentSaved = currentSaved * Math.pow(1 + monthlyRate, totalMonths);
+      const remainingTarget = targetPortfolio - futureValueCurrentSaved;
+      
+      let monthlySaving = 0;
+      if (remainingTarget > 0) {
+         monthlySaving = (remainingTarget * monthlyRate) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      }
+      
+      const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      
+      document.getElementById('retGapDisplay').textContent = formatter.format(gapMonthly > 0 ? gapMonthly : 0) + " / mo";
+      document.getElementById('retTargetPortfolio').textContent = formatter.format(targetPortfolio);
+      document.getElementById('retTargetPortfolio2').textContent = formatter.format(targetPortfolio);
+      document.getElementById('retAgeLabel').textContent = targetAge;
+      document.getElementById('retMonthlySaving').innerHTML = `${formatter.format(monthlySaving)} <span class="text-sm text-gray-500 font-normal">/ mo</span>`;
+
+      const resArea = document.getElementById('retResultArea');
+      resArea.classList.remove('hidden');
+      resArea.querySelector('.backdrop-blur-\\[2px\\]').classList.remove('hidden');
+      document.getElementById('retFullReport').classList.add('hidden');
+    }
+
+    function promptRetirementGate() {
+      openLeadModal("Retirement Gap", function showUnlockedReport() {
+         const resArea = document.getElementById('retResultArea');
+         resArea.querySelector('.backdrop-blur-\\[2px\\]').classList.add('hidden');
+         document.getElementById('retFullReport').classList.remove('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
