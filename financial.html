@@ -94,47 +94,82 @@
           
           <form id="nwForm" class="space-y-4">
             <div>
-              <h4 class="font-bold text-navy mb-3">Assets +</h4>
-              <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                  <label class="text-sm text-charcoal">Cash / Liquid</label>
-                  <div class="relative w-1/2">
+              <h4 class="font-bold text-navy mb-3 border-b pb-2 border-gray-100">Assets (+)</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Cash & Checking</label>
+                  <div class="relative">
                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
-                    <input type="number" id="nw-cash" value="25000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                    <input type="number" id="nw-cash" value="25000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
                   </div>
                 </div>
-                <div class="flex items-center justify-between">
-                  <label class="text-sm text-charcoal">Investments (Brokerage/IRA)</label>
-                  <div class="relative w-1/2">
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Taxable Investments</label>
+                  <div class="relative">
                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
-                    <input type="number" id="nw-invest" value="150000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                    <input type="number" id="nw-invest" value="150000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
                   </div>
                 </div>
-                <div class="flex items-center justify-between">
-                  <label class="text-sm text-charcoal">Real Estate / Home Equity</label>
-                  <div class="relative w-1/2">
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Retirement (401k/IRA)</label>
+                  <div class="relative">
                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
-                    <input type="number" id="nw-realestate" value="85000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                    <input type="number" id="nw-retirement" value="200000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Real Estate Value</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-realestate" value="450000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Vehicles & Property</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-property" value="45000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Business Equity</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-business" value="0" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="pt-4 mt-4 border-t border-gray-100">
-              <h4 class="font-bold text-navy mb-3">Liabilities -</h4>
-              <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                  <label class="text-sm text-charcoal">Credit / Consumer Debt</label>
-                  <div class="relative w-1/2">
+            <div class="pt-2">
+              <h4 class="font-bold text-navy mb-3 border-b pb-2 border-gray-100">Liabilities (-)</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Credit Cards / Consumer</label>
+                  <div class="relative">
                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
-                    <input type="number" id="nw-debt" value="12000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                    <input type="number" id="nw-debt" value="12000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
                   </div>
                 </div>
-                <div class="flex items-center justify-between">
-                  <label class="text-sm text-charcoal">Student Loans</label>
-                  <div class="relative w-1/2">
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Student Loans</label>
+                  <div class="relative">
                     <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
-                    <input type="number" id="nw-student" value="0" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none" min="0">
+                    <input type="number" id="nw-student" value="45000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Primary Mortgage</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-mortgage" value="320000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-charcoal mb-1">Auto Loans</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input type="number" id="nw-auto" value="28000" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded focus:ring-1 focus:ring-teal focus:border-teal outline-none text-sm" min="0">
                   </div>
                 </div>
               </div>
@@ -190,8 +225,8 @@
     function calculateNetWorth() {
       const getVal = (id) => parseFloat(document.getElementById(id).value) || 0;
       
-      const assets = getVal('nw-cash') + getVal('nw-invest') + getVal('nw-realestate');
-      const liabilities = getVal('nw-debt') + getVal('nw-student');
+      const assets = getVal('nw-cash') + getVal('nw-invest') + getVal('nw-retirement') + getVal('nw-realestate') + getVal('nw-property') + getVal('nw-business');
+      const liabilities = getVal('nw-debt') + getVal('nw-student') + getVal('nw-mortgage') + getVal('nw-auto');
       const nw = assets - liabilities;
       const goal = getVal('nw-goal') || 1000000;
       
