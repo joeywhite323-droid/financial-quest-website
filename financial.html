@@ -210,9 +210,9 @@
             </div>
             
             <!-- Hidden Complete Report Data -->
-            <div id="nwFullReport" class="hidden relative z-20 mt-4 border-t border-slate-200 pt-4">
-              <h4 class="font-bold text-navy mb-2">Analysis Breakdown</h4>
-              <p class="text-sm text-charcoal mb-3" id="nwAdviceBody"></p>
+            <div id="nwFullReport" class="hidden relative z-20 mt-6 border-t border-slate-200 pt-6">
+              <h4 class="font-bold text-navy mb-4 text-lg">Comprehensive Balance Sheet Analysis</h4>
+              <div id="nwAdviceBody" class="space-y-4"></div>
             </div>
           </div>
 
@@ -243,13 +243,67 @@
       document.getElementById('nwPercentStr').textContent = percentage.toFixed(1) + '%';
       
       // Setup the hidden report
-      let advice = "";
-      if (nw < 0) advice = "Your primary focus should be liquidating high-interest consumer debt before prioritizing long-term thematic investments.";
-      else if (percentage < 25) advice = "You have established a baseline. Utilizing diversified ETFs and maximizing employer matches will accelerate your initial compounding phase.";
-      else if (percentage < 75) advice = "You are in the crucial acceleration phase. Strategic tax harvesting and portfolio rebalancing are essential here.";
-      else advice = "You are approaching your target. Capital preservation and transitioning to yield-focused assets will secure your milestone.";
+      let adviceHTML = "";
       
-      document.getElementById('nwAdviceBody').textContent = advice;
+      // 1. Progress to Goal
+      if (nw < 0) {
+        adviceHTML += `<div class="bg-red-50 border-l-4 border-red-500 p-4 shadow-sm"><h5 class="font-bold text-red-700 text-sm mb-1">Negative Capital Trajectory</h5><p class="text-sm text-red-900 leading-relaxed">Your liabilities currently exceed your assets. Your paramount focus must be structural debt elimination before attempting to scale high-risk investments.</p></div>`;
+      } else {
+        if (percentage < 25) adviceHTML += `<div class="bg-blue-50 border-l-4 border-blue-500 p-4 shadow-sm"><h5 class="font-bold text-blue-800 text-sm mb-1">Accumulation Phase</h5><p class="text-sm text-blue-900 leading-relaxed">You are in the early stages of capital formation. Consistent, aggressive contributions to tax-advantaged accounts will be your strongest mathematical lever here.</p></div>`;
+        else if (percentage < 75) adviceHTML += `<div class="bg-gradient-to-r from-teal/10 to-transparent border-l-4 border-teal p-4 shadow-sm"><h5 class="font-bold text-navy text-sm mb-1">Compounding Era</h5><p class="text-sm text-charcoal leading-relaxed">You have significant momentum. At this stage, complex tax-drag and inefficient asset location become your biggest enemies. Optimization is required.</p></div>`;
+        else adviceHTML += `<div class="bg-green-50 border-l-4 border-green-500 p-4 shadow-sm"><h5 class="font-bold text-green-800 text-sm mb-1">Milestone Convergence</h5><p class="text-sm text-green-900 leading-relaxed">You are within striking distance of your goal. Capital preservation and tactical defensive positioning become increasingly viable to lock in your success.</p></div>`;
+      }
+
+      // 2. High-Interest Debt Warning
+      const highInterest = getVal('nw-debt');
+      if (highInterest > 0) {
+        adviceHTML += `<div class="bg-orange-50/50 border border-orange-200 rounded p-4 mt-4 shadow-sm">
+          <h5 class="font-bold text-orange-700 text-sm mb-1 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg> Critical Wealth Leak
+          </h5>
+          <p class="text-sm text-orange-900 leading-relaxed">You are carrying <strong>${formatter.format(highInterest)}</strong> in expensive consumer debt. Every dollar used to pay this down mathematically guarantees a high double-digit risk-free return by halting compounding interest against you.</p>
+        </div>`;
+      }
+
+      // 3. House-Rich Alert (Liquidity Warning)
+      const realEstate = getVal('nw-realestate');
+      if (assets > 0 && (realEstate / assets) > 0.6) {
+        adviceHTML += `<div class="bg-slate-50 border border-slate-200 rounded p-4 mt-4 shadow-sm">
+          <h5 class="font-bold text-navy text-sm mb-1 flex items-center gap-2">
+            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Liquidity Imbalance
+          </h5>
+          <p class="text-sm text-charcoal leading-relaxed">Over 60% of your assets are tied up in real estate. While functionally an asset, this is highly illiquid. Ensure you are aggressively directing new incoming capital toward liquid 401ks and brokerages to diversify your systemic geographical risk.</p>
+        </div>`;
+      }
+
+      // 4. Heavy Cash Drag Alert
+      const cash = getVal('nw-cash');
+      if (nw > 100000 && cash > 70000 && highInterest === 0) {
+        adviceHTML += `<div class="bg-slate-50 border border-slate-200 rounded p-4 mt-4 shadow-sm">
+          <h5 class="font-bold text-navy text-sm mb-1 flex items-center gap-2">
+            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Purchasing Power Erosion
+          </h5>
+          <p class="text-sm text-charcoal leading-relaxed">You are holding a very large cash position (<strong>${formatter.format(cash)}</strong>). Unless earmarked for an immediate real estate transaction or impending tax bill, holding excess cash guarantees severe erosion via inflation. Deploy this capital into the markets aggressively.</p>
+        </div>`;
+      }
+
+      // 5. Depreciation Drag
+      const autoLoans = getVal('nw-auto');
+      const property = getVal('nw-property');
+      if (autoLoans > 0 || (property > 60000 && assets < 250000)) {
+         adviceHTML += `<div class="bg-slate-50 border border-slate-200 rounded p-4 mt-4 shadow-sm">
+           <h5 class="font-bold text-navy text-sm mb-1 flex items-center gap-2">
+             <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg> Depreciating Traps
+           </h5>
+           <p class="text-sm text-charcoal leading-relaxed">You have locked a noticeable percentage of free cash flow into highly depreciating assets (financing vehicles/toys). Consider pivoting your velocity towards appreciating, dividend-producing themes instead.</p>
+         </div>`;
+      }
+      
+      if(adviceHTML === "") {
+        adviceHTML += `<div class="bg-slate-50 border border-slate-200 rounded p-4 mt-4 shadow-sm"><p class="text-sm text-charcoal leading-relaxed">Your balance sheet is proportionally sound. Focus purely on increasing free cash flow to accelerate your timeline.</p></div>`;
+      }
+
+      document.getElementById('nwAdviceBody').innerHTML = adviceHTML;
       
       const resArea = document.getElementById('nwResultArea');
       resArea.classList.remove('hidden');
