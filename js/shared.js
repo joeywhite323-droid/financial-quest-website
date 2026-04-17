@@ -61,10 +61,10 @@ function injectSharedComponents() {
           <div>
             <h4 class="font-heading text-lg mb-4 text-teal">Company</h4>
             <ul class="space-y-2 text-sm text-gray-400">
-              <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Our Approach</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Insights</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="approach.html" class="hover:text-white transition-colors">Our Approach</a></li>
+              <li><a href="insights.html" class="hover:text-white transition-colors">Insights</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>

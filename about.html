@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Financial Quest</title>
+  <meta name="description" content="Discover the mission, values, and multi-generational focus of Financial Quest.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A192F',
+            charcoal: '#334155',
+            teal: '#14B8A6',
+            light: '#F8FAFC'
+          },
+          fontFamily: {
+            heading: ['Merriweather', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8FAFC;
+      color: #334155;
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Merriweather', serif;
+    }
+    .hero-bg {
+      background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('img/about_hero.png');
+      background-size: cover;
+      background-position: center 30%;
+    }
+  </style>
+  <script src="js/shared.js" defer></script>
+</head>
+<body class="pt-20">
+
+  <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Our <span class="text-teal">Mission</span>.</h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 font-light">
+          We build robust financial architectures designed to withstand volatility and compound across generations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="prose prose-lg max-w-none text-charcoal space-y-8 leading-relaxed">
+      <h2 class="text-3xl font-heading text-navy font-bold text-center mb-10">Beyond the Balance Sheet</h2>
+      
+      <p>
+        Financial Quest was founded on a singular premise: true wealth management extends far beyond asset allocation. While capital growth is critical, it is merely one pillar of a comprehensive strategy. We believe that true financial security requires a holistic, structural approach that explicitly addresses risk mitigation, tax efficiency, and legacy continuity.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 border-t-4 border-t-navy">
+          <h3 class="text-xl font-heading font-bold text-navy mb-3">Radical Transparency</h3>
+          <p class="text-sm">We operate entirely as fiduciaries, meaning our economic interests are mathematically aligned with yours. No hidden fees, no opaque structures. Just clear, quantifiable logic.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 border-t-4 border-t-teal">
+          <h3 class="text-xl font-heading font-bold text-navy mb-3">Algorithmic Precision</h3>
+          <p class="text-sm">We leverage institutional-grade technology and proven modern portfolio theory to strip emotional bias out of the compounding process, keeping your trajectory locked onto your goals.</p>
+        </div>
+      </div>
+
+      <p>
+        We do not just manage money; we architect fortresses. Whether you are in the aggressive accumulation phase trying to hit your first million, or you are entering the critical distribution window where capital preservation is paramount, our frameworks adapt to your specific timeline.
+      </p>
+      <p>
+        Welcome to the next evolution of wealth management.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
